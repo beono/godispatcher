@@ -18,11 +18,11 @@ func validateUser(event *godispatcher.Event) error {
 
 func main() {
 
-	observer := godispatcher.New()
-	observer.On(manager.UserUpdateBefore, validateUser)
+	dispatcher := godispatcher.New()
+	dispatcher.On(manager.UserUpdateBefore, validateUser)
 
 	UserManager := manager.UserManager{
-		Observer: observer,
+		Emitter: dispatcher,
 	}
 
 	newUser := manager.User{

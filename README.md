@@ -1,7 +1,7 @@
 # About the project
 
 This is an experimental library.
-I tried to implement observer patter in go without looking at existing solutions.
+I tried to implement observer pattern in go without looking at existing solutions.
 One can say that it's not "go way". We'll see. I want to implement couple of solutions and compare them.
 
 ## How to use
@@ -29,11 +29,11 @@ func validateUser(event *godispatcher.Event) error {
 
 func main() {
 
-	observer := godispatcher.New()
-	observer.On(manager.UserUpdateBefore, validateUser)
+	dispatcher := godispatcher.New()
+	dispatcher.On(manager.UserUpdateBefore, validateUser)
 
 	UserManager := manager.UserManager{
-		Observer: observer,
+		Observer: dispatcher,
 	}
 
 	newUser := manager.User{

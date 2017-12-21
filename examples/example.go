@@ -30,7 +30,7 @@ func main() {
 	dispatcher.On(manager.UserUpdateAfter, cleanCache)
 
 	UserManager := manager.UserManager{
-		Observer: dispatcher,
+		Emitter: dispatcher,
 	}
 
 	newUser := manager.User{

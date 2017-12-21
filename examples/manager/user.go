@@ -18,25 +18,25 @@ type User struct {
 	IsActive bool
 }
 
-type eventListener interface {
+type emitter interface {
 	On(event string, c godispatcher.Listener)
 	Emit(event string, data interface{}) error
 }
 
 // UserManager talks to database
 type UserManager struct {
-	Observer eventListener
+	Emitter emitter
 }
 
 // Update updates a user in database
 func (m UserManager) Update(u User) error {
-	if err := m.Observer.Emit(UserUpdateBefore, &u); err != nil {
+	if err := m.Emitter.Emit(UserUpdateBefore, &u); err != nil {
 		return errors.Wrap(err, "before update error")
 	}
 
 	// call database here
 
-	if err := m.Observer.Emit(UserUpdateAfter, u); err != nil {
+	if err := m.Emitter.Emit(UserUpdateAfter, u); err != nil {
 		return errors.Wrap(err, "after update error")
 	}
 	return nil
