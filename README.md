@@ -6,7 +6,8 @@
 
 This is an experimental library.
 I tried to implement observer patter in go without looking at existing solutions.
-One can say that it's not "go way". We'll see. I want to implement couple of solutions and compare them.
+
+One may say that it's not "go way". We'll see. I want to implement couple of solutions and compare them.
 
 ## How to use
 
