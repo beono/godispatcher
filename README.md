@@ -1,5 +1,6 @@
 
 [![Build Status](https://travis-ci.org/beono/godispatcher.svg?branch=master)](https://travis-ci.org/beono/godispatcher)
+[![GoDoc](https://godoc.org/github.com/beono/godispatcher?status.svg)](https://godoc.org/github.com/beono/godispatcher)
 [![Go Report Card](https://goreportcard.com/badge/github.com/beono/godispatcher)](https://goreportcard.com/report/github.com/beono/godispatcher)
 
 # About the project
