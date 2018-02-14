@@ -19,7 +19,6 @@ type User struct {
 }
 
 type emitter interface {
-	On(event string, c godispatcher.Listener)
 	Emit(event string, data interface{}) error
 }
 
