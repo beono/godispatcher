@@ -1,7 +1,6 @@
 package manager
 
 import (
-	"github.com/beono/godispatcher"
 	"github.com/pkg/errors"
 )
 
