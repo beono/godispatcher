@@ -47,7 +47,7 @@ func main() {
 		Email: "",
 	}
 
-	fmt.Println(UserManager.Update(newUser))
+	fmt.Println(UserManager.Update(newUser)) // prints "email can't be empty"
 }
 
 ```
