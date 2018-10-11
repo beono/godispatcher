@@ -66,7 +66,7 @@ func (o Dispatcher) On(event string, v interface{}) {
 		if l, ok := v.(Listener); ok {
 			o.listeners[event] = append(o.listeners[event], l)
 		}
-	case func():
+	case func(event *Event) error:
 		if l, ok := v.(func(event *Event) error); ok {
 			o.listeners[event] = append(o.listeners[event], Listener{
 				Callback: l,
